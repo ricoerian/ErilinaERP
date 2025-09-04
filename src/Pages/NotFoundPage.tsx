@@ -1,8 +1,9 @@
-// src/Pages/NotFoundPage.tsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const NotFoundPage: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-800">
       <div className="text-center p-8 bg-white rounded-lg shadow-xl">
@@ -11,12 +12,12 @@ const NotFoundPage: React.FC = () => {
         <p className="mt-4 text-gray-600">
           Maaf, halaman yang Anda cari tidak ada atau mungkin telah dipindahkan.
         </p>
-        <Link
-          to="/"
+        <button
+          onClick={() => navigate(-1)}
           className="mt-8 inline-block px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors duration-300"
         >
-          Kembali ke Beranda
-        </Link>
+          Kembali ke Halaman Sebelumnya
+        </button>
       </div>
     </div>
   );
