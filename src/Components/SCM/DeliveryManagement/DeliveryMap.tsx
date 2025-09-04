@@ -275,7 +275,7 @@ const DeliveryMap: React.FC<Props> = ({ deliveryTrips, vehicleStatuses }) => {
         return null;
     };
 
-    const getRoute = async (start: [number, number], end: [number, number]): Promise<[number, number][]> => {
+    const getRoute = React.useCallback(async (start: [number, number], end: [number, number]): Promise<[number, number][]> => {
         const url = `${OSRM_URL}/route/v1/driving/${start[1]},${start[0]};${end[1]},${end[0]}?geometries=geojson&overview=full`;
         try {
             const response = await fetch(url);
@@ -292,7 +292,7 @@ const DeliveryMap: React.FC<Props> = ({ deliveryTrips, vehicleStatuses }) => {
             showNotification(`Error fetching route: ${msg}`, 'error');
             return [];
         }
-    };
+    }, [showNotification]);
 
     useEffect(() => {
         const fetchAllRoutes = async () => {
@@ -312,7 +312,7 @@ const DeliveryMap: React.FC<Props> = ({ deliveryTrips, vehicleStatuses }) => {
         };
 
         if (deliveryTrips.length > 0) fetchAllRoutes();
-    }, [deliveryTrips, showNotification]);
+    }, [deliveryTrips, getRoute, showNotification]);
 
     const center: [number, number] = useMemo(() => {
         // Coba ambil koordinat dari vehicle status terlebih dahulu
