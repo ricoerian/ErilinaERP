@@ -101,7 +101,7 @@ const InventoryManagementPage: React.FC = () => {
     return parseFloat(value.replace(/,/g, ''));
   };
 
-  const fetchWarehouses = async () => {
+  const fetchWarehouses = React.useCallback(async () => {
     if (companyID === undefined || companyID === null) {
       return;
     }
@@ -124,9 +124,9 @@ const InventoryManagementPage: React.FC = () => {
     } catch (err) {
       console.warn('Error fetching warehouses:', err);
     }
-  };
+  }, [companyID]);
 
-  const fetchItems = async () => {
+  const fetchItems = React.useCallback(async () => {
     if (companyID === undefined || companyID === null) {
       setLoading(false);
       setItems([]);
@@ -158,7 +158,7 @@ const InventoryManagementPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [companyID, showNotification]);
 
   useEffect(() => {
     if (companyID !== undefined && companyID !== null) {
@@ -167,7 +167,7 @@ const InventoryManagementPage: React.FC = () => {
     } else {
       setLoading(true);
     }
-  }, [companyID]);
+  }, [companyID, fetchItems, fetchWarehouses]);
 
   const naturalSort = (a: string, b: string): number => {
     const re = /(\d+)|(\D+)/g;
