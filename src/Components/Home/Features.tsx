@@ -9,24 +9,24 @@ import {
 
 const FEATURES = [
   {
-    icon: <CogIcon className="w-10 h-10 text-blue-500" aria-hidden="true" />,
+    icon: <CogIcon className="w-10 h-10 text-blue-500" aria-hidden="true" />,    
     title: 'Customizable',
-    description: 'Sesuaikan modul sesuai kebutuhan bisnis Anda.',
+    description: 'Tailor modules to fit your business needs.',
   },
   {
     icon: <ChartBarIcon className="w-10 h-10 text-green-500" aria-hidden="true" />,
     title: 'Analytics',
-    description: 'Dapatkan laporan real-time untuk pengambilan keputusan.',
+    description: 'Gain real-time reports for informed decision making.',
   },
   {
     icon: <UsersIcon className="w-10 h-10 text-yellow-500" aria-hidden="true" />,
     title: 'User Management',
-    description: 'Kelola peran dan akses tim dengan mudah.',
+    description: 'Manage team roles and access with ease.',
   },
   {
     icon: <ShieldCheckIcon className="w-10 h-10 text-red-500" aria-hidden="true" />,
     title: 'Security',
-    description: 'Keamanan data tingkat enterprise untuk perlindungan maksimal.',
+    description: 'Enterprise grade data security for maximum protection.',
   },
 ];
 
@@ -40,7 +40,7 @@ export const FeatureSection: React.FC = () => (
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Fitur Unggulan
+        Key Features
       </motion.h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {FEATURES.map((item, idx) => (
@@ -56,7 +56,10 @@ export const FeatureSection: React.FC = () => (
             <div className="mb-4 !mx-auto flex justify-center">
               {item.icon}
             </div>
-            <h3 id={`feature-${idx}-title`} className="text-2xl font-semibold mb-2 text-gray-900 group-hover:text-indigo-600 transition-colors">
+            <h3
+              id={`feature-${idx}-title`}
+              className="text-2xl font-semibold mb-2 text-gray-900 group-hover:text-indigo-600 transition-colors"
+            >
               {item.title}
             </h3>
             <p className="text-gray-600">

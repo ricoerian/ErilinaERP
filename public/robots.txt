@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://erilinaerp.ricoeri.my.id/sitemap.xml

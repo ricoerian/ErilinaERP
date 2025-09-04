@@ -6,33 +6,33 @@ interface Testimonial { avatar: string; quote: string; name: string; }
 const TESTIMONIALS: Testimonial[] = [
   {
     avatar: 'https://i.pravatar.cc/80?img=1',
-    quote: 'EriLinaERP telah mengubah cara kami mengelola inventaris, sangat efisien!”',
-    name: 'Budi Santoso, CEO PT. Makmur',
+    quote: '“EriLinaERP has transformed how we manage inventory, extremely efficient!”',
+    name: 'Budi Santoso, CEO of Makmur Inc.',
   },
   {
     avatar: 'https://i.pravatar.cc/80?img=2',
-    quote: '“Laporan real-time membantu kami mengambil keputusan lebih cepat.”',
-    name: 'Siti Aisyah, CFO PT. Sejahtera',
+    quote: '“Real-time reporting helps us make decisions faster.”',
+    name: 'Siti Aisyah, CFO of Sejahtera Ltd.',
   },
   {
     avatar: 'https://i.pravatar.cc/80?img=3',
-    quote: '“Integrasi modul sangat mudah dan fleksibel sesuai kebutuhan.”',
-    name: 'Andi Wijaya, COO PT. Berkah',
+    quote: '“Module integration is seamless and flexible to our needs.”',
+    name: 'Andi Wijaya, COO of Berkah Co.',
   },
   {
     avatar: 'https://i.pravatar.cc/80?img=4',
-    quote: '“Tim support sangat responsif dan membantu setiap masalah.”',
-    name: 'Rina Dewi, CTO PT. Mahir',
+    quote: '“The support team is very responsive and assists with every issue.”',
+    name: 'Rina Dewi, CTO of Mahir Solutions',
   },
   {
     avatar: 'https://i.pravatar.cc/80?img=5',
-    quote: '“Solusi ini meningkatkan produktivitas tim kami hingga 40%.”',
-    name: 'Joko Prabowo, Manager TI PT. Fokus',
+    quote: '“This solution boosted our team productivity by 40%."',
+    name: 'Joko Prabowo, IT Manager at Fokus Tech',
   },
   {
     avatar: 'https://i.pravatar.cc/80?img=6',
-    quote: '“Implementasi lancar tanpa downtime, rekomendasi untuk siapa saja.”',
-    name: 'Lisa Kartika, VP Engineering PT. Amanah',
+    quote: '“Deployment was smooth with no downtime, highly recommended.”',
+    name: 'Lisa Kartika, VP of Engineering at Amanah Corp.',
   },
 ];
 
@@ -61,7 +61,7 @@ export const TestimonialSection: React.FC = () => {
     <section aria-labelledby="testimonials-title" className="py-20 bg-gray-50">
       <div className="max-w-screen-xl mx-auto px-6 text-center">
         <h2 id="testimonials-title" className="text-5xl font-extrabold mb-12 text-gray-900">
-          Apa Kata Klien Kami
+          What Our Clients Say
         </h2>
         <div
           className="relative overflow-x-hidden overflow-y-visible px-4 py-8"

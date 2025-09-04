@@ -8,4 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    allowedHosts: ['erilinaerp.ricoeri.my.id', '192.168.1.225', 'localhost'],
+  },
 })

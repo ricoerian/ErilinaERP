@@ -9,18 +9,18 @@ interface Module {
 }
 
 const modules: Module[] = [
-  { id: 'scm', label: 'SCM', title: 'Supply Chain Management', description: 'Kelola aliran bahan dan produk, pemantauan inventaris, serta pelacakan pengiriman untuk efisiensi biaya.' },
-  { id: 'fm',  label: 'FM', title: 'Financial Management',  description: 'Pengelolaan keuangan: akuntansi, laporan, dan arus kas untuk keputusan strategis.' },
-  { id: 'm',   label: 'M', title: 'Manufacturing',   description: 'Dukung perencanaan produksi, manajemen BOM, dan kontrol kualitas real-time.' },
-  { id: 'iot', label: 'IoT', title: 'Internet of Things', description: 'Konektivitas perangkat dengan sensor dan analitik prediktif untuk mencegah downtime.' },
-  { id: 'pm',  label: 'PM', title: 'Project Management',  description: 'Rencanakan dan pantau proyek dengan penjadwalan, alokasi sumber daya, dan milestone.' },
-  { id: 'crm', label: 'CRM', title: 'Customer Relationship Management', description: 'Satukan data pelanggan, manajemen kontak, dan pelacakan interaksi penjualan.' },
-  { id: 'sm',  label: 'SM', title: 'Sales Management',  description: 'Kelola prospek, pipeline, kuota, dan laporan kinerja tim penjualan.' },
-  { id: 's&m', label: 'S&M', title: 'Service & Maintenance', description: 'Jadwal perawatan aset, work order, dan riwayat servis untuk minimalkan downtime.' },
-  { id: 'hrm', label: 'HRM', title: 'Human Resource Management', description: 'Rekrutmen, absensi, cuti, hingga payroll dalam satu platform terintegrasi.' },
-  { id: 'am',  label: 'AM', title: 'Asset Management',  description: 'Pantau siklus hidup aset dari pembelian hingga penyusutan dan pelepasan.' },
-  { id: 'bi',  label: 'BI', title: 'Business Intelligence',  description: 'Dashboard dan laporan analitik real-time untuk insight bisnis mendalam.' },
-  { id: 'bda', label: 'BDA', title: 'Big Data Analytics', description: 'Analitik data besar dan prediksi bisnis menggunakan machine learning.' }
+  { id: 'scm', label: 'SCM', title: 'Supply Chain Management', description: 'Manage the flow of materials and products, monitor inventory, and track shipments for cost efficiency.' },
+  { id: 'fm',  label: 'FM', title: 'Financial Management',  description: 'Handle accounting, reporting, and cash flow for strategic decision-making.' },
+  { id: 'm',   label: 'M', title: 'Manufacturing',   description: 'Support production planning, BOM management, and real-time quality control.' },
+  { id: 'iot', label: 'IoT', title: 'Internet of Things', description: 'Connect devices with sensors and predictive analytics to prevent downtime.' },
+  { id: 'pm',  label: 'PM', title: 'Project Management',  description: 'Plan and monitor projects with scheduling, resource allocation, and milestones.' },
+  { id: 'crm', label: 'CRM', title: 'Customer Relationship Management', description: 'Unify customer data, contact management, and sales interaction tracking.' },
+  { id: 'sm',  label: 'SM', title: 'Sales Management',  description: 'Manage leads, pipelines, quotas, and sales team performance reports.' },
+  { id: 's&m', label: 'S&M', title: 'Service & Maintenance', description: 'Schedule asset maintenance, work orders, and service history to minimize downtime.' },
+  { id: 'hrm', label: 'HRM', title: 'Human Resource Management', description: 'Recruitment, attendance, leave management, and payroll in one integrated platform.' },
+  { id: 'am',  label: 'AM', title: 'Asset Management',  description: 'Track asset lifecycle from acquisition to depreciation and disposal.' },
+  { id: 'bi',  label: 'BI', title: 'Business Intelligence',  description: 'Real-time dashboards and reports for deep business insights.' },
+  { id: 'bda', label: 'BDA', title: 'Big Data Analytics', description: 'Leverage big data analytics and machine learning for business predictions.' }
 ];
 
 const RADIUS = 170;
@@ -33,9 +33,9 @@ const CircleMenu: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
 
-  // 1. ambil scrollY
+  // 1. get scrollY
   const { scrollY } = useViewportScroll();
-  // 2. map scrollY 0–500px jadi backgroundPositionY 0 to -200px
+  // 2. map scrollY 0–500px to backgroundPositionY 0 to -200px
   const bgY = useTransform(scrollY, [0, 500], [0, -200]);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const CircleMenu: React.FC = () => {
       className="flex-1 flex justify-center min-h-screen max-h-screen items-center bg-cover bg-center p-4 relative"
       style={{
         backgroundImage: "url('/ERP.png')",
-        // 3. pasang transform
+        // 3. apply transform
         backgroundPositionY: bgY,
       }}
     >

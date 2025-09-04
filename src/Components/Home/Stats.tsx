@@ -8,43 +8,43 @@ import {
 
 const STATS = [
   {
-    icon: <UsersIcon className="w-10 h-10 text-blue-500" aria-hidden="true" />,
-    label: 'Pengguna Aktif',
-    value: '5.000+',
-    description: 'Dari seluruh cabang global.',
+    icon: <UsersIcon className="w-10 h-10 text-blue-500" aria-hidden="true" />,    
+    label: 'Active Users',
+    value: '5,000+',
+    description: 'Across all global branches.',
   },
   {
     icon: <CheckCircleIcon className="w-10 h-10 text-green-500" aria-hidden="true" />,
-    label: 'Proyek Selesai',
-    value: '1.200+',
-    description: 'Implementasi ERP sukses untuk klien kami.',
+    label: 'Projects Completed',
+    value: '1,200+',
+    description: 'Successful ERP implementations for our clients.',
   },
   {
     icon: <ClockIcon className="w-10 h-10 text-red-500" aria-hidden="true" />,
-    label: 'Uptime Sistem',
+    label: 'System Uptime',
     value: '99.9%',
-    description: 'Ketersediaan layanan tahunan.',
+    description: 'Annual service availability.',
   },
 ];
 
 export const StatsSection: React.FC = () => {
-  // Format bulan & tahun sekarang untuk subtitle
+  // Format current month & year for subtitle
   const now = new Date();
-  const formatter = new Intl.DateTimeFormat('id-ID', { month: 'long', year: 'numeric' });
-  const subtitle = `Data terkini per ${formatter.format(now)}`;
+  const formatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' });
+  const subtitle = `Latest data as of ${formatter.format(now)}`;
 
   return (
-    <section className="py-20 ">
+    <section className="py-20">
       <div className="container mx-auto px-6 text-center">
         <motion.h2
-          className="text-4xl font-bold mb-2 text-gray-800"
+          className="text-4xl font-bold mb-2 text-white"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Statistik Kami
+          Our Statistics
         </motion.h2>
-        <p className="text-gray-600 mb-12">{subtitle}</p>
+        <p className="text-white mb-12">{subtitle}</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {STATS.map((stat, i) => (
