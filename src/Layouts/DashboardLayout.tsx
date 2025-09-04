@@ -148,10 +148,7 @@ const DashboardLayout: React.FC = () => {
               className={`flex flex-col flex-grow transition-all duration-300 ease-in-out ${sidebarOpen ? 'md:ml-64' : 'md:ml-20'} ml-0 min-w-0 overflow-x-hidden`}
               style={{ marginLeft: sidebarOpen ? sidebarWidthOpen : sidebarWidthClosed }}
             >
-              <DashboardNavbar
-                toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
-                isSidebarOpen={sidebarOpen}
-              />
+              <DashboardNavbar />
               <main className="flex-grow p-4 md:p-6 overflow-y-auto">
                 <Outlet />
               </main>

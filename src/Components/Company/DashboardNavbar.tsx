@@ -1,13 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Menu, X, LogOut, User, Settings, Key, Mail } from 'lucide-react';
+import { LogOut, User, Settings, Key, Mail } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useCompanyDetails } from '../../Contexts/CompanyContext';
 import { URL_BECC } from '../../Utils/Constants';
-
-type DashboardNavbarProps = {
-  toggleSidebar: () => void;
-  isSidebarOpen: boolean;
-};
 
 interface UserData {
   id: number;
@@ -32,10 +27,7 @@ interface UserData {
   } | null;
 }
 
-const DashboardNavbar: React.FC<DashboardNavbarProps> = ({
-  toggleSidebar,
-  isSidebarOpen,
-}) => {
+const DashboardNavbar = () => {
   const { company } = useParams<{ company: string }>();
   const navigate = useNavigate();
   const companyDetails = useCompanyDetails();
@@ -143,13 +135,6 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({
       style={{ backgroundColor: primaryColor, color: textColor }}
     >
       <div className="flex items-center gap-4">
-        <button
-          onClick={toggleSidebar}
-          className="hidden md:block p-2 rounded hover:bg-white/20 transition"
-        >
-          {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-        {/* Logo atau nama perusahaan untuk mobile */}
         <div className="md:hidden text-lg font-bold">
           {companyDetails?.name}
         </div>

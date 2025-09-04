@@ -127,7 +127,7 @@ const MobileDashboardLayout: React.FC = () => {
                 <NotificationProvider>
                     <div className="flex flex-col h-screen bg-gray-100">
                         <SosNotification alerts={sosAlerts} onDismiss={dismissAlert} />
-                        <DashboardNavbar toggleSidebar={() => {}} isSidebarOpen={false} />
+                        <DashboardNavbar />
                         <main className="flex-grow overflow-y-auto pb-24">
                             <Outlet />
                         </main>
